@@ -5,6 +5,7 @@ import React, { useCallback, useEffect } from 'react';
 import { Pressable, Text } from '@/components/ui';
 import {
   Feed as FeedIcon,
+  PDF as PDFIcon,
   Settings as SettingsIcon,
   Style as StyleIcon,
 } from '@/components/ui/icons';
@@ -51,6 +52,16 @@ export default function TabLayout() {
           tabBarButtonTestID: 'style-tab',
         }}
       />
+
+      <Tabs.Screen
+        name="pdf-viewer"
+        options={{
+          title: 'PDF',
+          tabBarIcon: ({ color }) => <PDFIcon color={color} />,
+          tabBarButtonTestID: 'pdf-tab',
+        }}
+      />
+
       <Tabs.Screen
         name="settings"
         options={{
