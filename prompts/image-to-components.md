@@ -1,37 +1,37 @@
-You are an expert in TypeScript, React Native, Expo, and Mobile UI development with Nativewind.
+你是 TypeScript、React Native、Expo 和使用 Nativewind 进行移动端 UI 开发的专家。
 
-Using the provided image, create a React Native component that matches the design.
+使用提供的图片，创建一个匹配设计的 React Native 组件。
 
-The component should be a functional component and should be styled with Nativewind.
+该组件应该是一个函数式组件，并使用 Nativewind 进行样式设计。
 
-Follow the following steps:
+请按照以下步骤操作：
 
-1. Layout Analysis:
+1. 布局分析：
 
-   - Describe the main layout structure you observe in the image
-   - Identify key UI components (buttons, cards, lists, etc.)
-   - Identify components from `@/components/ui` we can use to build the layout if needed
-   - Note any specific spacing, alignment, or positioning patterns
+   - 描述你在图片中观察到的主要布局结构
+   - 识别关键 UI 组件（按钮、卡片、列表等）
+   - 识别我们可以使用的来自 `@/components/ui` 的组件来构建布局（如果需要）
+   - 注意任何特定的间距、对齐或定位模式
 
-2. Component Implementation:
+2. 组件实现：
 
-   - Use Nativewind for styling
-   - Use shared components from `@/components/ui` in case you need them
-   - Component should be accessible and follow the accessibility best practices
-   - Prefer using colors from tailwind config
-   - For images, use a placeholder image from `@assets/images/placeholder.png`
-   - Animated View doesn't support `className` prop, so you need to use `style` prop instead
+   - 使用 Nativewind 进行样式设计
+   - 在需要时使用来自 `@/components/ui` 的共享组件
+   - 组件应该具有可访问性并遵循可访问性最佳实践
+   - 优先使用 tailwind 配置中的颜色
+   - 对于图片，使用来自 `@assets/images/placeholder.png` 的占位图片
+   - Animated View 不支持 `className` 属性，所以你需要使用 `style` 属性
 
-## Example
+## 示例
 
-Here is a example of how to write the component:
+以下是如何编写组件的示例：
 
 ```tsx
 import * as React from 'react';
 
 import { Text, View, Image, SavaAreaView } from '@/components/ui';
 
-// Props should be defined in the top of the component
+// Props 应该在组件顶部定义
 type TitleProps = {
   text: string;
 };
@@ -51,9 +51,9 @@ export function Title({ text }: TitleProps) {
 }
 ```
 
-- If the screen is a form, create a form component that uses `react-hook-form` and `zod` to validate the form data and handle the form submission using the `onSubmit` prop and a console log of the form data for debugging
+- 如果屏幕是表单，请创建一个使用 `react-hook-form` 和 `zod` 的表单组件，用于验证表单数据并使用 `onSubmit` 属性处理表单提交，同时为调试目的记录表单数据
 
-Here is an example of how to write the form component:
+以下是如何编写表单组件的示例：
 
 ```tsx
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -69,14 +69,14 @@ const schema = z.object({
   name: z.string().optional(),
   email: z
     .string({
-      required_error: 'Email is required',
+      required_error: '邮箱是必填项',
     })
-    .email('Invalid email format'),
+    .email('邮箱格式无效'),
   password: z
     .string({
-      required_error: 'Password is required',
+      required_error: '密码是必填项',
     })
-    .min(6, 'Password must be at least 6 characters'),
+    .min(6, '密码至少需要6个字符'),
 });
 
 export type FormType = z.infer<typeof schema>;
@@ -101,12 +101,11 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
             testID="form-title"
             className="pb-6 text-center text-4xl font-bold"
           >
-            Sign In
+            登录
           </Text>
 
           <Text className="mb-6 max-w-xs text-center text-gray-500">
-            Welcome! 👋 This is a demo login screen! Feel free to use any email
-            and password to sign in and try it out.
+            欢迎！👋 这是一个演示登录界面！随意使用任何邮箱和密码登录并尝试。
           </Text>
         </View>
 
@@ -114,26 +113,26 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
           testID="name"
           control={control}
           name="name"
-          label="Name"
+          label="姓名"
         />
 
         <ControlledInput
           testID="email-input"
           control={control}
           name="email"
-          label="Email"
+          label="邮箱"
         />
         <ControlledInput
           testID="password-input"
           control={control}
           name="password"
-          label="Password"
+          label="密码"
           placeholder="***"
           secureTextEntry={true}
         />
         <Button
           testID="login-button"
-          label="Login"
+          label="登录"
           onPress={handleSubmit(onSubmit)}
         />
       </View>

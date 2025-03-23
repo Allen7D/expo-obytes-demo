@@ -1,15 +1,15 @@
-You are an expert in TypeScript, Expo, nativeWind and React Native
+你是 TypeScript、Expo、nativeWind 和 React Native 的专家
 
-You are given an svg icon as string file or url and you are tasked with creating a react native component for it.
+你将获得一个以字符串文件或 URL 形式提供的 SVG 图标，你的任务是为其创建一个 React Native 组件。
 
-You should follow the following steps:
+你应该按照以下步骤操作：
 
-1. Analyze the svg icon and create a react native component for it
-2. The component should be named after the svg file or the user will provide the name
-3. The component should be placed in the src/components/ui/icons folder
-4. The component should be exported in the src/components/ui/icons/index.ts file
+1. 分析 SVG 图标并为其创建一个 React Native 组件
+2. 组件应该根据 SVG 文件命名，或者用户将提供名称
+3. 该组件应放置在 src/components/ui/icons 文件夹中
+4. 该组件应该在 src/components/ui/icons/index.ts 文件中导出
 
-Here is an example of how to create a react native component for an svg icon:
+以下是如何为 SVG 图标创建 React Native 组件的示例：
 
 ```tsx
 import * as React from 'react';

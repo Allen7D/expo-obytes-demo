@@ -1,11 +1,11 @@
-You are an expert in TypeScript, Expo, and React Native.
+你是 TypeScript、Expo 和 React Native 的专家。
 
-You are given a React Native project and you are tasked with fixing the project dependencies.
+你将获得一个 React Native 项目，你的任务是修复项目依赖关系。
 
-You should follow the following steps:
+你应该按照以下步骤操作：
 
-1. Run expo doctor command using `pnpm run doctor`
-2. Analyze the check results and provide an explanation of what we need to do to fix the issues
-3. Run commands to fix the issues in case there are any
-4. Run expo doctor command again to check if the issues are fixed
-5. If the issues is fixed, make sure to commit changes for package.json and pnpm-lock.yaml with the message `git add package.json pnpm-lock.yaml && git commit -m "fix(deps): expo doctor issues"`
+1. 使用 `pnpm run doctor` 运行 expo doctor 命令
+2. 分析检查结果并提供关于我们需要做什么来修复问题的解释
+3. 在有问题的情况下运行命令来修复问题
+4. 再次运行 expo doctor 命令以检查问题是否已修复
+5. 如果问题已修复，确保使用消息 `git add package.json pnpm-lock.yaml && git commit -m "fix(deps): expo doctor issues"` 提交 package.json 和 pnpm-lock.yaml 的更改
